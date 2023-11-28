@@ -1,11 +1,5 @@
 ## Part Grouping Network (PGN)
-Ke Gong, Xiaodan Liang, Yicheng Li, Yimin Chen, Ming Yang and Liang Lin, "Instance-level Human Parsing via Part Grouping Network", ECCV 2018 (Oral).
-
-### Introduction
-
-PGN is a state-of-art deep learning methord for semantic part segmentation, instance-aware edge detection and instance-level human parsing built on top of [Tensorflow](http://www.tensorflow.org).
-
-This distribution provides a publicly available implementation for the key model ingredients reported in our latest [paper](http://openaccess.thecvf.com/content_ECCV_2018/papers/Ke_Gong_Instance-level_Human_Parsing_ECCV_2018_paper.pdf) which is accepted by ECCV 2018.
+记录怎么用PGN获得分析图
 
 
 ### Crowd Instance-level Human Parsing (CIHP) Dataset
@@ -31,8 +25,4 @@ We have released our trained models of PGN on CIHP dataset at [google drive](htt
 5. Use test_pgn.py to generate the results with the trained models.
 6. The instance tool is used for instance partition process from semantic part segmentation maps and instance-aware edge maps, which is written in MATLAB.
 
-## Related work
-+ Self-supervised Structure-sensitive Learning [SSL](https://github.com/Engineering-Course/LIP_SSL), CVPR2017
-+ Joint Body Parsing & Pose Estimation Network  [JPPNet](https://github.com/Engineering-Course/LIP_JPPNet), T-PAMI2018
-+ Graphonomy: Universal Human Parsing via Graph Transfer Learning [Graphonomy](https://github.com/Gaoyiminggithub/Graphonomy), CVPR2019
 
