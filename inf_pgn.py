@@ -36,7 +36,7 @@ for i in glob(os.path.join(args.directory, '**'), recursive=True):
     if os.path.isfile(i):
         image_list_inp.append(i)
 # print(image_list)
-image_list_inp = image_list_inp[:5]
+image_list_inp = image_list_inp
 # sys.exit(2)
 N_CLASSES = 20
 NUM_STEPS = len(image_list_inp)

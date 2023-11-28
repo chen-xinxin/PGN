@@ -16,9 +16,9 @@ from PIL import Image
 from utils import *
 
 N_CLASSES = 20
-DATA_DIR = './datasets/CIHP'
-LIST_PATH = './datasets/CIHP/list/val.txt'
-DATA_ID_LIST = './datasets/CIHP/list/val_id.txt'
+DATA_DIR = './datasets/CIHP2'
+LIST_PATH = './datasets/CIHP2/list/val.txt'
+DATA_ID_LIST = './datasets/CIHP2/list/val_id.txt'
 with open(DATA_ID_LIST, 'r') as f:
     NUM_STEPS = len(f.readlines()) 
 RESTORE_FROM = './checkpoint/CIHP_pgn'
@@ -150,7 +150,7 @@ def main():
     restore_var = tf.global_variables()
     # Set up tf session and initialize variables. 
     config = tf.ConfigProto()
-    config.gpu_options.allow_growth = True
+    config.gpu_options.allow_growth = False
     sess = tf.Session(config=config)
     init = tf.global_variables_initializer()
     
@@ -190,11 +190,11 @@ def main():
 
         parsing_im = Image.fromarray(msk[0])
         # print("here")
-        parsing_im.save('{}/{}_vis.png'.format(parsing_dir, img_id))
-        cv2.imwrite('{}/{}.png'.format(parsing_dir, img_id), parsing_[0,:,:,0])
-        sio.savemat('{}/{}.mat'.format(parsing_dir, img_id), {'data': scores[0,:,:]})
+        parsing_im.save('{}/{}.png'.format(parsing_dir, img_id))
+        # cv2.imwrite('{}/{}.png'.format(parsing_dir, img_id), parsing_[0,:,:,0])
+        # sio.savemat('{}/{}.mat'.format(parsing_dir, img_id), {'data': scores[0,:,:]})
         
-        cv2.imwrite('{}/{}.png'.format(edge_dir, img_id), edge_[0,:,:,0] * 255)
+        # cv2.imwrite('{}/{}.png'.format(edge_dir, img_id), edge_[0,:,:,0] * 255)
         print("here")
 
     res_mIou = mIoU.eval(session=sess)
@@ -212,6 +212,6 @@ def main():
 
 if __name__ == '__main__':
     main()
-
+    print("success!!!")
 
 ##############################################################333

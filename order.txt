@@ -1,0 +1,1 @@
+把图片放在datasets/images中，然后python inf_pgn.py
